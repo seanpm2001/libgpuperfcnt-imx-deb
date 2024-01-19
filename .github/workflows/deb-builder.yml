@@ -1,4 +1,7 @@
-on: push
+on: 
+  push:
+  schedule:
+      - cron: '0 0 * * 0'
 
 jobs:
   build-debs:
@@ -12,4 +15,4 @@ jobs:
           buildpackage-opts: --build=binary --no-sign
           host-arch: arm64
           apt-opts: --install-recommends
-
+          docker-image: debian:testing-slim
