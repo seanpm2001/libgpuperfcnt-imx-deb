@@ -5,14 +5,15 @@ export DH_VERBOSE=1
 
 DEB_BUILD_OPTIONS=noautodbgsym
 
-LIBGPUPERFCNT_INSTALLER_SCRIPT="libgpuperfcnt-6.4.3.p4.2-aarch64-wayland.bin"
+LIBGPUPERFCNT_INSTALLER_SCRIPT="libgpuperfcnt-6.4.11.p2.0d-aarch64-wayland"
 
 %:
 	dh $@
 
 override_dh_auto_configure:
-	wget -O $(CURDIR)/libgpuperfcnt.sh https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/$(LIBGPUPERFCNT_INSTALLER_SCRIPT)
+	wget -O $(CURDIR)/libgpuperfcnt.sh https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/$(LIBGPUPERFCNT_INSTALLER_SCRIPT).bin
 	mkdir -p ./tmp/ ; chmod +x ./libgpuperfcnt.sh ; ./libgpuperfcnt.sh --force --auto-accept
+	mv $(LIBGPUPERFCNT_INSTALLER_SCRIPT) libgpuperfcnt
 
 override_dh_strip_nondeterminism:
 

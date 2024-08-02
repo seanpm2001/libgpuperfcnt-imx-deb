@@ -1,3 +1,9 @@
+libgpuperfcnt (6.4.11.p2.0d) stable; urgency=medium
+
+  * Bump.
+
+ -- Leonardo Held <leonardo.held@toradex.com>  Fri, 2 Aug 2024 08:37:12 -0300
+
 libgpuperfcnt (6.4.3) unstable; urgency=medium
 
   * Initial release.
